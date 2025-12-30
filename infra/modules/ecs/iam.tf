@@ -10,10 +10,12 @@ data "aws_iam_policy_document" "ecs_task_assume_role" {
   }
 }
 
+
 resource "aws_iam_role" "ecs_task_execution_role" {
   name               = "threatcomp-ecs-task-exec-role"
   assume_role_policy = data.aws_iam_policy_document.ecs_task_assume_role.json
 }
+
 
 resource "aws_iam_role_policy_attachment" "ecs_task_exec_policy" {
   role       = aws_iam_role.ecs_task_execution_role.name

@@ -4,6 +4,7 @@ resource "aws_alb" "main" {
     security_groups = [var.alb_sg_id]
 }
 
+
 resource "aws_alb_target_group" "app" {
     name        = "threatcomp-target-group"
     port        = 80
@@ -22,6 +23,7 @@ resource "aws_alb_target_group" "app" {
     }
 }
 
+
 resource "aws_alb_listener" "http" {
   load_balancer_arn = aws_alb.main.arn
   port              = 80
@@ -36,6 +38,7 @@ resource "aws_alb_listener" "http" {
     }
   }
 }
+
 
 resource "aws_alb_listener" "https" {
   load_balancer_arn = aws_alb.main.arn

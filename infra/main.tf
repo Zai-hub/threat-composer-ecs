@@ -1,11 +1,10 @@
-# Root for Networking
 module "networking" {
   source   = "./modules/networking"
   vpc_cidr = var.vpc_cidr
   az_count = var.az_count
 }
 
-# Root for Security
+
 module "security" {
   source   = "./modules/security"
   vpc_id   = module.networking.vpc_id
@@ -17,7 +16,7 @@ module "ecr" {
   repo_name = "threat-composer-image"
 }
 
-# ECS
+
 module "ecs" {
   source = "./modules/ecs"
 
@@ -37,7 +36,7 @@ module "ecs" {
   listener_arn = module.alb.listener_https_arn
 }
 
-# ALB
+
 module "alb" {
   source = "./modules/alb"
 

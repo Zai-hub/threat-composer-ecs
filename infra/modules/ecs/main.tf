@@ -2,6 +2,7 @@ resource "aws_ecs_cluster" "main" {
     name = "threatcomp-cluster"
 }
 
+
 resource "aws_ecs_task_definition" "app" {
     family                   = "threatcomp-task"
     execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
@@ -25,6 +26,7 @@ resource "aws_ecs_task_definition" "app" {
         cpu_architecture        = "ARM64"
 }
 }
+
 
 resource "aws_ecs_service" "main" {
     name            = "threatcomp-service"
