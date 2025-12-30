@@ -34,7 +34,7 @@ module "ecs" {
   ecs_tasks_sg_id    = module.security.ecs_tasks_sg_id
 
   target_group_arn = module.alb.target_group_arn
-  listener_arn     = module.alb.listener_arn
+  listener_arn = module.alb.listener_https_arn
 }
 
 # ALB
@@ -47,4 +47,12 @@ module "alb" {
 
   app_port           = 80
   health_check_path  = "/health"
+
+  certificate_arn = module.acm.certificate_arn
+}
+
+# ACM
+module "acm" {
+  source      = "./modules/acm"
+  domain_name = var.domain_name
 }

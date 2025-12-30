@@ -9,3 +9,7 @@ variable "az_count" {
 variable "aws_region" {
   type = string
 }
+
+variable "domain_name" {
+  type = string 
+  }
