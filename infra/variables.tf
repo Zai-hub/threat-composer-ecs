@@ -5,3 +5,7 @@ variable "vpc_cidr" {
 variable "az_count" {
   type = number
 }
+
+variable "aws_region" {
+  type = string
+}
