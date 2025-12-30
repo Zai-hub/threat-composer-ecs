@@ -21,7 +21,6 @@ output "ecs_tasks_sg_id" {
   }
 
 # ECR 
-
 output "ecr_repository_url" {
   value = module.ecr.repository_url
 }

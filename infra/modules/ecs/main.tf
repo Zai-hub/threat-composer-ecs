@@ -39,7 +39,6 @@ resource "aws_ecs_service" "main" {
     assign_public_ip = false
     }
 
-# Added ALB dependency after applying ALB
 load_balancer {
     target_group_arn = var.target_group_arn
     container_name   = "threatcomp-app"

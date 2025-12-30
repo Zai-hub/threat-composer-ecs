@@ -22,18 +22,6 @@ resource "aws_alb_target_group" "app" {
     }
 }
 
-# Traffic from the ALB to the target group
-# resource "aws_alb_listener" "front_end" {
-#   load_balancer_arn = aws_alb.main.id
-#   port              = var.app_port
-#   protocol          = "HTTP"
-
-#   default_action {
-#     target_group_arn = aws_alb_target_group.app.id
-#     type             = "forward"
-#   }
-# }
-
 resource "aws_alb_listener" "http" {
   load_balancer_arn = aws_alb.main.arn
   port              = 80
