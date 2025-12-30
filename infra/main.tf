@@ -13,3 +13,8 @@ module "security" {
   vpc_id   = module.networking.vpc_id
   app_port = 80
 }
+
+module "ecr" {
+  source    = "./modules/ecr"
+  repo_name = "threat-composer-image"
+}
