@@ -1,9 +1,10 @@
 # Threat Composer | ECS Project
 <!-- Project badges -->
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
 ![Docker](https://img.shields.io/badge/Container-Docker-blue)
 ![AWS ECS](https://img.shields.io/badge/AWS-ECS-orange)
-![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
+
 
 ## Description
 
@@ -16,7 +17,7 @@ The objective of the project was to containerise and deploy an application using
 ThreatComposer ECS is a DevOps-driven deployment of the ThreatComposer application using **AWS ECS**. It is designed for scalability, security and automation.
 
 This project focuses on:
-- Containerised workloads 
+- Containerized workloads 
 - Infrastructure as Code
 - CI/CD pipelines
 
