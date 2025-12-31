@@ -63,7 +63,7 @@ jobs:
     
     steps:
       - name: Wait for deployment
-        run: sleep 120
+        run: sleep 60
 
       - name: Health Check
         env:
@@ -76,8 +76,11 @@ jobs:
           RETRY_COUNT=0
           
           while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" $HEALTH_URL || echo "000")
-            
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" $HEALTH_URL 2>/dev/null)
+            if [ $? -ne 0 ] || [ -z "$HTTP_CODE" ]; then
+              HTTP_CODE="000"
+            fi
+
             if [ "$HTTP_CODE" = "200" ]; then
               echo "Health check passed! (HTTP $HTTP_CODE)"
               exit 0
