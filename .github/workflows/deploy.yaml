@@ -49,7 +49,7 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply --auto-approve tfplan
 
       - name: Get outputs
         id: tf-outputs

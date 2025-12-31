@@ -8,6 +8,7 @@ variable "az_count" {
 
 variable "aws_region" {
   type = string
+  default = "eu-west-2"
 }
 
 variable "domain_name" {
