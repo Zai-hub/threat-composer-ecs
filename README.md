@@ -37,14 +37,9 @@ This project focuses on:
 
 ---
 
-## 🚀 Features
+## Features
 
-- Containerized ThreatComposer service
-- ECS Task Definitions & Services
-- Blue/Green or Rolling deployments
-- Auto Scaling
-- Secure networking
-- Observability & logging
+- 
 
 ---
 
@@ -53,6 +48,8 @@ This project focuses on:
 ```text
 .
 ├── app/                     # Application source
+    ├── docker                # Dockerfiles
+
 ├── docker/                  # Dockerfiles
 ├── terraform/               # IaC modules
 │   ├── ecs/
