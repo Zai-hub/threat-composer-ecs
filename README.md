@@ -5,13 +5,11 @@ The objective of the project was to containerise and deploy an application using
 ![Screenshot of https://zaitech.uk](./images/tc-tm.zaitech.uk-works.png)
 
 
-# ThreatComposer ECS
-
-<!-- Project badges (optional) -->
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![AWS](https://img.shields.io/badge/AWS-ECS-orange)
+<!-- Project badges -->
+![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue)
+![Docker](https://img.shields.io/badge/Container-Docker-blue)
+![AWS ECS](https://img.shields.io/badge/AWS-ECS-orange)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
-![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## 📌 Overview
 
