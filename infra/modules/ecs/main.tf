@@ -48,6 +48,5 @@ load_balancer {
 }
 
 depends_on = [var.listener_arn]
-
 }
 
