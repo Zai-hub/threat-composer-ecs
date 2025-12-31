@@ -1,25 +1,24 @@
 # Threat Composer | ECS Project
-
-The objective of the project was to containerise and deploy an application using Docker, Terraform and ECS Fargate using HTTPS and a custom domain.
-
-![Screenshot of https://zaitech.uk](./images/tc-tm.zaitech.uk-works.png)
-
-
 <!-- Project badges -->
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue)
 ![Docker](https://img.shields.io/badge/Container-Docker-blue)
 ![AWS ECS](https://img.shields.io/badge/AWS-ECS-orange)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
 
+## Description
+
+The objective of the project was to containerise and deploy an application using Docker, Terraform and ECS Fargate using HTTPS and a custom domain.
+
+![Screenshot of https://zaitech.uk](./images/tc-tm.zaitech.uk-works.png)
+
 ## 📌 Overview
 
-ThreatComposer ECS is a DevOps-driven deployment of the ThreatComposer application using **AWS ECS**, designed for scalability, security, and automation.
+ThreatComposer ECS is a DevOps-driven deployment of the ThreatComposer application using **AWS ECS**. It is designed for scalability, security and automation.
 
 This project focuses on:
-- Containerized workloads
+- Containerised workloads 
 - Infrastructure as Code
 - CI/CD pipelines
-- Secure cloud-native architecture
 
 ---
 
