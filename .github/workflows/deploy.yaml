@@ -63,7 +63,7 @@ jobs:
     
     steps:
       - name: Wait for deployment
-        run: sleep 30
+        run: sleep 120
 
       - name: Health Check
         env:
@@ -84,7 +84,7 @@ jobs:
             else
               echo "Health check failed (HTTP $HTTP_CODE). Retry $((RETRY_COUNT+1))/$MAX_RETRIES"
               RETRY_COUNT=$((RETRY_COUNT+1))
-              sleep 120
+              sleep 30
             fi
           done
           
