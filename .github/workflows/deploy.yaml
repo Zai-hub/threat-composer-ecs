@@ -11,10 +11,6 @@ env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   TF_VERSION: '1.14.2'
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   terraform:
     name: Terraform Plan and Apply
@@ -22,6 +18,9 @@ jobs:
     defaults:
       run:
         working-directory: ./infra
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Checkout code
@@ -30,13 +29,14 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ARN }}:role/GitHubActionsRole
+          role-to-assume: ${{ secrets.AWS_ARN }
           aws-region: ${{ env.AWS_REGION }}
+          role-session-name: github-actions-${{ github.run_number }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: ${{ env.TF_VERSION }}
+          terraform_version: ${{ secrets.TF_VERSION }}
 
       - name: Terraform Init
         run: terraform init
