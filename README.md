@@ -10,6 +10,14 @@
 
 The objective of the project was to containerise and deploy an application using Docker, Terraform and ECS Fargate using HTTPS and a custom domain.
 
+
+## Architecture
+
+![architecture diagram](./images/ecs-diagram1.drawio.png)
+
+
+## Deployed Application 
+
 ![Screenshot of https://zaitech.uk](./images/tc-tm.zaitech.uk-works.png)
 
 ## 📌 Overview
@@ -20,45 +28,25 @@ This project focuses on:
 - Containerized workloads 
 - Infrastructure as Code
 - CI/CD pipelines
-
----
-
-## 🏗 Architecture
-
-<!-- Architecture diagram -->
-![Architecture Diagram](docs/architecture.png)
-
-**High-level components:**
-- AWS ECS (Fargate / EC2)
-- Application Load Balancer
-- Amazon ECR
-- CloudWatch Logs
-- IAM Roles
-- VPC (public/private subnets)
-
 ---
 
 ## Features
 
 - Containerized ThreatComposer service
 - ECS Task Definitions & Services
-- Blue/Green or Rolling deployments
-- Auto Scaling
 - Secure networking
-- Observability & logging
-
----
+- ECS Fargate
 
 ## 📁 Repository Structure
 
 ```text
 .
-├── app/             # Application source
-├── docker/                  # Dockerfiles
-├── terraform/               # IaC modules
+├── app/            
+├── ├──docker/             
+├── terraform/              
 │   ├── ecs/
 │   ├── vpc/
 │   └── iam/
-├── .github/workflows/       # CI/CD pipelines
-├── docs/                    # Diagrams & documentation
+├── .github/workflows/    
+├── images/                   
 └── README.md
