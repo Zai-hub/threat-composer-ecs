@@ -69,7 +69,6 @@ jobs:
         env:
           DOMAIN: ${{ secrets.DOMAIN_NAME }}
         run: |
-          curl -vk https://tm.${{ secrets.DOMAIN_NAME }}/health
           HEALTH_URL="https://tm.${{ secrets.DOMAIN_NAME }}/health"
           echo "Checking health at: $HEALTH_URL"
           
