@@ -67,9 +67,9 @@ jobs:
 
       - name: Health Check
         env:
-          DOMAIN: ${{ secrets.DOMAIN_NAME }}
+          DOMAIN_NAME: ${{ secrets.DOMAIN_NAME }}
         run: |
-          HEALTH_URL="https://tm.${DOMAIN}/health"
+          HEALTH_URL="https://tm.${DOMAIN_NAME}/health"
           echo "Checking health at: $HEALTH_URL"
           
           MAX_RETRIES=5
