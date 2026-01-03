@@ -99,7 +99,7 @@ The project was built incrementally, moving from local validation and moving to 
 - GitHub repository
 - Domain managed via Route 53 and/or Cloudflare
 
-## 1. Application and Local Validation
+### 1. Application and Local Validation
 - Cloned existing Threat Composer application repository.
 
 - Local set up:
@@ -117,7 +117,7 @@ yarn global add serve
 serve -s build
 ```
 
-## 2. Containerisation
+### 2. Containerisation
 - Created a multi-stage Dockerfile inside the app.
 
 - Built the image locally using:
@@ -135,7 +135,7 @@ cult http://localhost:8080
 ```
 - Image is ready to be pushed to ECR. 
 
-## 3. Image Registry | AWS ECR
+### 3. Image Registry | AWS ECR
 - Created an AWS ECR repository.
 
 - Confirmed AWS credentials were configued:
@@ -161,7 +161,7 @@ docker push \
 <AWS-ID>.dkr.ecr.<YOUR-REGION>.amazonaws.com/<IMAGE-NAME>
 ```
 
-## 4. ClickOps | Manual AWS Setup
+### 4. ClickOps | Manual AWS Setup
 - The main parts of the infrastructure were first created manually using the AWS console in order to understand how the services fit together.
 
 - Created:
@@ -174,7 +174,7 @@ docker push \
 
 Once the application was reachable via HTTPS, all manual resources were deleted.
 
-## 5. IaC | Terraform
+### 5. IaC | Terraform
 I created the the setup using modular Terraform.
 
 - Iniitialised Terraform in the directory:
@@ -199,7 +199,7 @@ curl https://<DOMAIN>/health
 ``` bash
 terraform destroy
 ```
-## 6. CI/CD Automation
+### 6. CI/CD Automation
 Implemented Github Actions for the pipelines.
 
 ### Build and Push
@@ -212,7 +212,7 @@ Implemented Github Actions for the pipelines.
 ![architecture diagram](./images/healthcheck-cicd.png)
 
 
-### Challenges and Lessons Learned
+## Challenges and Lessons Learned
 I encountered many challenges during this project. The issues helped deepen my understanding.
 - Commit often and early
 - As a Mac user, I had issues running my image. I implemented ARM 64 in my clickops task definitions as well as terraform Iac. However, when it comes to building pipelines, this will slow down the build exponentially. Do not add it to you yaml files.
